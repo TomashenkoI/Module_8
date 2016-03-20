@@ -9,7 +9,4 @@ public class File {
     String type;
     double size;
 
-    public String getName() {
-        return name;
-    }
 }

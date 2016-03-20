@@ -12,8 +12,8 @@ public class AudioFile extends File {
     }
 
     public String toString() {
-//        if (name.length() < 20) {
+        if (name.length() < 20) {
             return "| " + name + "   | " + type + " | " + size + " mb |";
-        }
-//    }
+        } else return "| " + name + " | " + type + " |  " + size + " mb |";
+    }
 }

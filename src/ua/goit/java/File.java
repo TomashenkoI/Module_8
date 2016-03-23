@@ -14,15 +14,4 @@ public class File {
     public double getSize() {
         return size;
     }
-
-    // comparator
-//    public static class CompSize implements Comparator<File> {
-//        @Override
-//        public int compare(File arg0, File arg1) {
-//            return (int) (arg0.size - arg1.size);
-//        }
-//    }
-
-
-
 }

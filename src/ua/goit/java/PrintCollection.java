@@ -39,9 +39,6 @@ public class PrintCollection {
                 }
         }
 
-              // сорировка через .sort
-//            Collections.sort(direction, new File.CompSize());
-
             System.out.println();
             System.out.println("Files in the direction");
             System.out.println("________________________________________");

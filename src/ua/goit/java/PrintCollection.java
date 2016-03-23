@@ -1,7 +1,6 @@
 package ua.goit.java;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
 /**
  * Created by 7 on 20.03.2016.
@@ -9,8 +8,8 @@ import java.util.Collection;
 public class PrintCollection {
     public static void main(String[] args) {
 
-        AudioFile audioFile1 = new AudioFile("Smoke on the water", 18.1);
-        AudioFile audioFile2 = new AudioFile("Stairway to heaven", 12.3);
+        AudioFile audioFile1 = new AudioFile("Stairway to heaven", 12.3);
+        AudioFile audioFile2 = new AudioFile("Smoke on the water", 18.1);
         AudioFile audioFile3 = new AudioFile("Nothing else matters", 9.6);
         Picture picture1 = new Picture("photo1", 4.9);
         Picture picture2 = new Picture("photo2", 5.3);
@@ -24,21 +23,37 @@ public class PrintCollection {
         direction.add(picture2);
         direction.add(textFile1);
 
-        ArrayList<AudioFile> MyMusic = new ArrayList<>();
-        MyMusic.add(audioFile1);
-        MyMusic.add(audioFile2);
-        MyMusic.add(audioFile3);
+        ArrayList<AudioFile> myMusic = new ArrayList<>();
+        myMusic.add(audioFile1);
+        myMusic.add(audioFile2);
+        myMusic.add(audioFile3);
 
-        System.out.println();
-        System.out.println("Files in the direction");
-        System.out.println("________________________________________");
-        System.out.println("| Name                 | type | size   |");
-        for (File d : direction) {
-            System.out.println("________________________________________");
-            System.out.println(d);
+        // сортировка пузырьком
+        for (int i = 0; i < direction.size(); i++) {
+            for (int y = 0; y < direction.size() - 1; y++)
+                if (direction.get(y).getSize() > direction.get(y + 1).getSize()) {
+                    File lessThanPres = direction.get(y);
+                    direction.set(y, direction.get(y + 1));
+                    direction.set(y + 1, lessThanPres);
+
+                }
         }
-        System.out.println("________________________________________");
+
+              // сорировка через .sort
+//            Collections.sort(direction, new File.CompSize());
+
+            System.out.println();
+            System.out.println("Files in the direction");
+            System.out.println("________________________________________");
+            System.out.println("| Name                 |type | size ↑  |");
+            for (File d : direction) {
+                System.out.println("________________________________________");
+                System.out.println(d);
+            }
+            System.out.println("________________________________________");
+        }
     }
-}
+
+
 
 

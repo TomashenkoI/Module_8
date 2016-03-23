@@ -32,9 +32,9 @@ public class PrintCollection {
         for (int i = 0; i < direction.size(); i++) {
             for (int y = 0; y < direction.size() - 1; y++)
                 if (direction.get(y).getSize() > direction.get(y + 1).getSize()) {
-                    File lessThanPres = direction.get(y);
+                    File moreThanPres = direction.get(y);
                     direction.set(y, direction.get(y + 1));
-                    direction.set(y + 1, lessThanPres);
+                    direction.set(y + 1, moreThanPres);
 
                 }
         }
